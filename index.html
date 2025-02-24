@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <h1>Score Keeper</h1>
+    <div id="scoreboard">
+        <div class="player" id="player1">
+            <h2>Player 1</h2>
+            <p>Wins: <span id="player1-wins">0</span></p>
+            <p>Losses: <span id="player1-losses">0</span></p>
+            <p>Winning Streak: <span id="player1-streak">0</span></p>
+        </div>
+        <div class="player" id="player2">
+            <h2>Player 2</h2>
+            <p>Wins: <span id="player2-wins">0</span></p>
+            <p>Losses: <span id="player2-losses">0</span></p>
+            <p>Winning Streak: <span id="player2-streak">0</span></p>
+        </div>
+    </div>
+    <button onclick="recordWin(1)">Player 1 Wins</button>
+    <button onclick="recordWin(2)">Player 2 Wins</button>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker Registered', reg))
+                .catch(err => console.log('Service Worker Registration Failed', err));
+        }
+    </script>
+</body>
+</html>
