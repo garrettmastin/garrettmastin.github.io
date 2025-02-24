@@ -26,6 +26,15 @@ function recordWin(winner) {
     localStorage.setItem('scores', JSON.stringify(scores));
 }
 
+function clearScores() {
+    scores = {
+        player1: { wins: 0, losses: 0, streak: 0 },
+        player2: { wins: 0, losses: 0, streak: 0 }
+    };
+    updateDisplay();
+    localStorage.removeItem('scores');
+}
+
 function loadScores() {
     let savedScores = localStorage.getItem('scores');
     if (savedScores) {
