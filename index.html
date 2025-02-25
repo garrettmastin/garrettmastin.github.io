@@ -10,28 +10,26 @@
     <script defer src="app.js"></script>
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
-    <div class="card shadow p-4" style="width: 400px;">
-        <h1 class="text-center">Score Keeper</h1>
-        <div id="scoreboard" class="my-3">
-            <div class="player border p-3 mb-2" id="player1">
-                <h2 class="text-primary">Wes</h2>
+    <div class="card bg-secondary shadow p-4 col-12 h-100">
+        <h1 class="text-center text-light">Score Keeper</h1>
+        <div id="scoreboard" class="my-3 text-center">
+            <div class="card p-3 mb-2 d-flex justify-content-center align-items-center" id="player1">
+                <h1 class="text-dark"><u>Wes</u></h1>
                 <p>Wins: <span id="player1-wins">0</span></p>
                 <p>Losses: <span id="player1-losses">0</span></p>
                 <p>Winning Streak: <span id="player1-streak">0</span></p>
+                <button class="btn btn-success w-50 me-2" onclick="recordWin(1)">Win</button>
             </div>
-            <div class="player border p-3 mb-2" id="player2">
-                <h2 class="text-danger">Garrett</h2>
+            <div class="card p-3 mb-2 d-flex justify-content-center align-items-center" id="player2">
+                <h1 class="text-dark"><u>Garrett</u></h1>
                 <p>Wins: <span id="player2-wins">0</span></p>
                 <p>Losses: <span id="player2-losses">0</span></p>
                 <p>Winning Streak: <span id="player2-streak">0</span></p>
+                <button class="btn btn-success w-50" onclick="recordWin(2)">Win</button>
             </div>
-        </div>
-        <div class="d-flex justify-content-between">
-            <button class="btn btn-primary w-50 me-2" onclick="recordWin(1)">Wes Won</button>
-            <button class="btn btn-danger w-50" onclick="recordWin(2)">Garrett Won</button>
-        </div>
+
         <div class="text-center mt-3">
-            <button class="btn btn-secondary w-50" onclick="clearScores()">Clear Scoreboard</button>
+            <button class="btn btn-danger w-100" onclick="clearScores()">Clear Scoreboard</button>
         </div>
     </div>
     <script>
